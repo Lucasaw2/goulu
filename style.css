@@ -19,6 +19,8 @@ a { color: var(--accent-ink); font-weight: 800; }
 h1, h2, h3 { line-height: 1.2; margin: 0; }
 h2 { font-size: 26px; font-weight: 900; margin: 48px 0 16px; }
 p { margin: 0; }
+/* The mascot's poses are taller than wide: kept whole in their square. */
+img { object-fit: contain; }
 .hero { text-align: center; padding: 40px 0 8px; }
 .hero img { width: 150px; height: 150px; animation: bob 2.6s ease-in-out infinite; }
 .hero h1 { font-size: 46px; font-weight: 1000; letter-spacing: -0.02em; margin-top: 8px; }
