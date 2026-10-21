@@ -1,0 +1,63 @@
+@font-face { font-family: Nunito; font-weight: 200 1000; font-display: swap; src: url(fonts/nunito-latin.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: Nunito; font-weight: 200 1000; font-display: swap; src: url(fonts/nunito-latin-ext.woff2) format('woff2'); unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF; }
+:root {
+  color-scheme: light dark;
+  --bg: #fffaf5; --surface: #ffffff; --soft: #fff0e2; --ink: #2b1d14; --muted: #76614f; --line: #f0dccb;
+  --accent: #ee6c00; --shade: #b45200; --on-accent: #ffffff; --accent-ink: #b45200;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1b1816; --surface: #252120; --soft: #33261b; --ink: #f6eee7; --muted: #b9a898; --line: #3b332d;
+    --accent: #ff8a2b; --shade: #c4630d; --on-accent: #1d1209; --accent-ink: #ffab66;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.55 Nunito, system-ui, sans-serif; }
+main, footer { max-width: 620px; margin: 0 auto; padding: 0 20px; }
+a { color: var(--accent-ink); font-weight: 800; }
+h1, h2, h3 { line-height: 1.2; margin: 0; }
+h2 { font-size: 26px; font-weight: 900; margin: 48px 0 16px; }
+p { margin: 0; }
+.hero { text-align: center; padding: 40px 0 8px; }
+.hero img { width: 150px; height: 150px; animation: bob 2.6s ease-in-out infinite; }
+.hero h1 { font-size: 46px; font-weight: 1000; letter-spacing: -0.02em; margin-top: 8px; }
+.lead { font-size: 19px; font-weight: 700; color: var(--muted); margin: 10px auto 0; max-width: 30em; text-wrap: balance; }
+.download {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; margin-top: 26px; padding: 0 28px; min-height: 60px;
+  border-radius: 18px; background: var(--accent); color: var(--on-accent); text-decoration: none; font-size: 19px; font-weight: 900;
+  border-bottom: 5px solid var(--shade); max-width: 100%;
+}
+.download:active { transform: translateY(3px); border-bottom-width: 2px; }
+.meta { margin-top: 12px; font-size: 14px; font-weight: 700; color: var(--muted); }
+.note { margin-top: 6px; font-size: 14px; color: var(--muted); }
+.card { background: var(--surface); border: 2px solid var(--line); border-radius: 22px; padding: 18px; }
+.qr { display: flex; align-items: center; gap: 18px; margin-top: 32px; }
+.qr svg { width: 128px; height: 128px; flex: none; border-radius: 12px; }
+.qr h3 { font-size: 19px; font-weight: 900; }
+.qr p { color: var(--muted); margin-top: 4px; }
+@media (pointer: coarse) and (max-width: 700px) { .qr { display: none; } }
+ol.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+ol.steps li { display: flex; gap: 14px; }
+.num { flex: none; width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center; background: var(--soft); color: var(--accent-ink); font-weight: 900; }
+.steps h3, .features h3 { font-size: 18px; font-weight: 900; }
+.steps p, .features p { color: var(--muted); margin-top: 3px; }
+.features { display: grid; gap: 12px; }
+.features .card { display: flex; gap: 14px; align-items: center; }
+.features img { width: 64px; height: 64px; flex: none; }
+.promise { display: flex; gap: 16px; align-items: center; margin-top: 48px; background: var(--soft); border-color: transparent; }
+.promise img { width: 76px; height: 76px; flex: none; }
+.promise h3 { font-size: 20px; font-weight: 900; }
+.promise p { margin-top: 4px; color: var(--muted); }
+footer { margin-top: 56px; padding-bottom: 40px; border-top: 2px solid var(--line); padding-top: 20px; font-size: 14px; color: var(--muted); }
+footer nav { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-bottom: 10px; }
+footer p + p { margin-top: 4px; }
+.back { display: inline-block; margin-top: 28px; }
+.legal h1 { font-size: 34px; font-weight: 1000; margin-top: 12px; }
+.legal .updated { color: var(--muted); font-size: 14px; margin-top: 6px; }
+.legal h2 { font-size: 21px; margin: 32px 0 8px; }
+.legal p + p, .legal ul + p, .legal p + ul { margin-top: 10px; }
+.legal ul { padding-left: 1.2em; margin: 10px 0 0; }
+.legal li + li { margin-top: 6px; }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .hero img { animation: none; } }
